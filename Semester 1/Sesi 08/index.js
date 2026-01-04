@@ -25,7 +25,17 @@ function getPassword() {
 }
 
 function savePassword() {
-    document.title = password.value
-    saveButton.setAttribute('href', 'data:text/plain;charset=utf-8', + encodeURIComponent(`password saya: ${document.title}`))
-    saveButton.setAttribute('download', 'MyPasswordGeneratorLOG.txt')
+    const content = `password saya: ${password.value}`;
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'MyPasswordGeneratorLOG.txt';
+    
+    document.body.appendChild(link);
+    link.click();
+    
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
 }
