@@ -1,0 +1,19 @@
+{
+  "name": "sesi-07",
+  "version": "1.0.0",
+  "description": "belajar backend",
+  "keywords": [
+    "qwe"
+  ],
+  "license": "ISC",
+  "author": "nugi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "mulai": "nodemon index.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.11",
+    "rupiah-format": "^1.0.0"
+  }
+}
